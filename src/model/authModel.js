@@ -19,6 +19,9 @@ async function insertUser(email, pass) {
   }
 }
 
+// model fn findUserByEmail(email)
+// grazina email arba tuscia masyva
+
 module.exports = {
   insertUser,
 };
