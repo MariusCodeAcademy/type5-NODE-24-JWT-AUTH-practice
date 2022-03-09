@@ -3,9 +3,6 @@ const morgan = require('morgan');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 
-// const mysql = require('mysql2/promise');
-// const dbConfig = require('./dbConfig');
-
 const PORT = process.env.SERVER_PORT || 3000;
 
 const app = express();
