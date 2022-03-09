@@ -1,6 +1,6 @@
 const { insertUser, findUserByEmail } = require('../model/authModel');
 const { failResponce, successResponce } = require('../utils/dbHelpers');
-const { hashPass } = require('../utils/helper');
+const { hashPass, verifyHash } = require('../utils/helper');
 
 async function register(req, res) {
   // gauti prisijungimo email ir pass
@@ -26,11 +26,14 @@ async function login(req, res) {
 
   const foundUserObj = findResults[0];
 
-  if (verifyHash(foundUserObj)) {
-    console.log('password match');
+  if (!verifyHash(password, foundUserObj)) {
+    // slaptazodziai nesutapo
+    return failResponce(res, 'email or pass not mach 2');
   }
-
+  // generate jwt token
+  console.log('password match');
   successResponce(res, findResults);
+
   // return insertResult === false
   //   ? failResponce(res)
   //   : successResponce(res, 'user created');
