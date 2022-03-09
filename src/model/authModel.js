@@ -18,10 +18,26 @@ async function insertUser(email, pass) {
     return false;
   }
 }
+async function findUserByEmail(email) {
+  try {
+    const conn = await mysql.createConnection(dbConfig);
+    const sql = `
+    SELECT * FROM ${tableName}
+    WHERE email = ?
+    `;
+    const [userFoundResult] = await conn.execute(sql, [email]);
+    await conn.close();
+    return userFoundResult;
+  } catch (error) {
+    console.log('findUserByEmail ===', error);
+    return false;
+  }
+}
 
 // model fn findUserByEmail(email)
 // grazina email arba tuscia masyva
 
 module.exports = {
   insertUser,
+  findUserByEmail,
 };
