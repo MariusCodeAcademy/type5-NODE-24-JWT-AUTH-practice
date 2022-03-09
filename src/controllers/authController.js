@@ -38,13 +38,6 @@ async function login(req, res) {
   successResponce(res, token);
 }
 
-// asyng fn login (req, res)
-// call model fn findUserByEmail(email)
-// jei user found bcrypt verify pass
-// jei email and pass ok
-// generate jwt token
-// respond with token
-
 module.exports = {
   register,
   login,
