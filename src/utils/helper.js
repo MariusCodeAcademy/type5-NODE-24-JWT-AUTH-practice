@@ -16,14 +16,15 @@ function generateJwtToken(userObj) {
 
 function verifyJwtToken(token) {
   const jwtSecret = process.env.JWT_TOKEN_SECRET;
-  jwt.verify(token, jwtSecret, (err, tokenPayload) => {
+
+  try {
+    const payload = jwt.verify(token, jwtSecret);
+    return payload;
+  } catch (err) {
+    // err
     console.log('err ===', err.message);
-    if (err.message) {
-      return false;
-    } else {
-      return tokenPayload;
-    }
-  });
+    return false;
+  }
 }
 
 module.exports = {
