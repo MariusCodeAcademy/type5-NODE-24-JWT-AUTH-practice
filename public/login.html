@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+    />
+    <script src="./js/login.js" defer></script>
+    <title>login</title>
+  </head>
+  <body>
+    <h1>login with us to see posts</h1>
+    <div class="errors"></div>
+    <form id="login">
+      <input type="text" name="email" placeholder="Email" />
+      <input type="password" name="password" placeholder="Password" />
+      <button>login</button>
+    </form>
+    <!-- 
+  formos html login
+  su js surenkam formos duomenis 
+POST http://localhost:3000/auth/login
+  siunciam su fetch 
+  ziurim ar gavom success ar false 
+  jei success tai redirect i login 
+  jei false pranesam apie klaidas klaidu konteineryje
+
+
+ -->
+  </body>
+</html>
