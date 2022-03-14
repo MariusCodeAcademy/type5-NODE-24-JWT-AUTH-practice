@@ -17,6 +17,6 @@ app.use(express.json());
 // routes
 app.use('/auth/', authRoutes);
 app.use('/posts/', articleRoutes);
-app.use('/user-tutorials/', tutRoutes);
+app.use('/', tutRoutes);
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

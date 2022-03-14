@@ -18,7 +18,38 @@ async function getTutorialsByUserIdDb(userId) {
     return false;
   }
 }
+async function getTutorialsDb() {
+  try {
+    const conn = await mysql.createConnection(dbConfig);
+    const sql = `
+    SELECT * FROM ${tableName}
+    `;
+    const [tutorialsArray] = await conn.execute(sql, []);
+    await conn.close();
+    return tutorialsArray;
+  } catch (error) {
+    console.log('getTutorials ===', error);
+    return false;
+  }
+}
+async function getPublicTutorials() {
+  try {
+    const conn = await mysql.createConnection(dbConfig);
+    const sql = `
+    SELECT * FROM ${tableName}
+    WHERE private = 0
+    `;
+    const [tutorialsArray] = await conn.execute(sql, []);
+    await conn.close();
+    return tutorialsArray;
+  } catch (error) {
+    console.log('getTutorials ===', error);
+    return false;
+  }
+}
 
 module.exports = {
   getTutorialsByUserIdDb,
+  getTutorialsDb,
+  getPublicTutorials,
 };
