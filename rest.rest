@@ -25,3 +25,8 @@ Content-Type: application/json
 }
 
 ###  verysecret123
+
+
+GET http://localhost:3000/user-tutorials/6
+
+###
