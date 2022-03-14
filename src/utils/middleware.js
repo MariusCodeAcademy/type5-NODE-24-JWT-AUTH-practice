@@ -31,19 +31,19 @@ async function validateToken(req, res, next) {
   const verifyResult = verifyJwtToken(tokenGotFromUser);
 
   if (verifyResult === false) return failResponce(res, 'invalid token', 403);
-  // console.log('verifyResult ===', verifyResult);
-  // req.manoKint = true;
+  console.log('verifyResult ===', verifyResult);
+  req.userId = verifyResult.id;
   next();
 }
 async function validateTokenAllTutorials(req, res, next) {
   const authHeader = req.headers.authorization;
   const tokenGotFromUser = authHeader && authHeader.split(' ')[1];
-  console.log('tokenGotFromUser ===', tokenGotFromUser);
+  // console.log('tokenGotFromUser ===', tokenGotFromUser);
   if (!tokenGotFromUser) return next();
   const verifyResult = verifyJwtToken(tokenGotFromUser);
 
   if (verifyResult === false) return next();
-  console.log('verifyResult ===', verifyResult);
+  // console.log('verifyResult ===', verifyResult);
 
   req.validUser = true;
   next();

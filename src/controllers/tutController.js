@@ -7,6 +7,8 @@ const { failResponce, successResponce } = require('../utils/dbHelpers');
 
 async function getTutorialByUserId(req, res) {
   const userId = req.params.user_id;
+  // pasiimti id is token
+  // const userId  = req.userId;
   const foundTutorials = await getTutorialsByUserIdDb(userId);
 
   return foundTutorials === false
@@ -19,11 +21,9 @@ async function getTutorials(req, res) {
   let foundTutorials;
   if (req.validUser === true) {
     // visi tutorial
-    console.log('visi tutorial');
     foundTutorials = await getTutorialsDb();
   } else {
     // public tutorial
-    console.log('public tutoriall');
     foundTutorials = await getPublicTutorials();
   }
 

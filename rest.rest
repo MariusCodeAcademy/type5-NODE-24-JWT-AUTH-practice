@@ -28,6 +28,8 @@ Content-Type: application/json
 
 
 GET http://localhost:3000/user-tutorials/6
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ3MjY0NDM5LCJleHAiOjE2NDcyNjgwMzl9.CsRS0hbYgSIbreKwknoay1BCQvzrw_mZF96v-1f2AVs
+
 
 ###
 GET http://localhost:3000/tutorials

@@ -15,8 +15,8 @@ Susikuriame dvi lenteles:
 
 ### Susikuriame Front-end‘o puslapius:
 
-1. register.html (forma - sukuria vartotoją arba išmeta klaidą).
-1. login.html (forma – grąžina token'ą ir išsaugo į localstorage (arba kaip cookie). Kitu atveju išmeta klaidą).
-1. index.html – išmeta visus straipsnius auth vartotojams. Jei vartotojas ne auth – jį nukreipia į login.html.
+- register.html (forma - sukuria vartotoją arba išmeta klaidą).
+- login.html (forma – grąžina token'ą ir išsaugo į localstorage (arba kaip cookie). Kitu atveju išmeta klaidą).
+- index.html – išmeta visus straipsnius auth vartotojams. Jei vartotojas ne auth – jį nukreipia į login.html.
 
 #### Taip pat nepamirštame patikrinti ir validuoti visų priimamų įvesčių. Tiek backend'e, tiek frontend'e.
